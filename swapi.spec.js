@@ -3,7 +3,7 @@ const request = require('supertest')
 test('Deve visualizar informações de cadastro, quando buscar por uma pessoa existente', async ()=> {
     // https://swapi.dev/api
     // /people/1
-    const resposta = await request('https://swapi.dev/api').get('/people/1');
+    const resposta = await request('https://swapi.dev/api').get('/people/10');
 
     // Verificar se o status da requisição está retornando com status 200
     expect(resposta.status).toBe(200);
@@ -12,7 +12,7 @@ test('Deve visualizar informações de cadastro, quando buscar por uma pessoa ex
     // Verificando se recupera no corpo de conteúdo, um ou mais veículos (aeronaves)
     expect(resposta.body.vehicles.length).toBeGreaterThan(0);
     // Verificando se recupera um conteúdo específico, por exemplo o nome da primeira pessoa
-    expect(resposta.body.name).toBe('Luke Skywalker');
+    expect(resposta.body.name).toBe('Obi-Wan Kenobi');
 
 });
 
