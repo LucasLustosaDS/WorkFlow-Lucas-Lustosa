@@ -29,7 +29,7 @@ jobs:
       - name: Use swapi.spec.js
 
       # Runs a set of commands using the runners shell
-      - name: Install dependencies
-        run: npm install
+      - name: run tests
+        run: npm test
           echo Add other actions to build,
           echo test, and deploy your project.
