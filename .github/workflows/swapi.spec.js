@@ -3,14 +3,14 @@ const request = require('supertest')
 test('Deve visualizar informações de cadastro, quando buscar por uma pessoa existente', async ()=> {
     // https://swapi.dev/api
     // /people/1
-    const resposta = await request('https://swapi.dev/api').get('/planets/3');
+    const resposta = await request('https://swapi.dev/api').get('/starships/9');
 
     // Verificar se o status da requisição está retornando com status 200
     expect(resposta.status).toBe(200);
     // Verificando a garantia de essas informações existem, não sendo indefinida
     expect(resposta.body.films).toBeDefined();
     // Verificando se recupera um conteúdo específico, por exemplo o nome da primeira pessoa
-    expect(resposta.body.name).toBe('Yavin IV');
+    expect(resposta.body.name).toBe('Death Star');
 
 });
 
